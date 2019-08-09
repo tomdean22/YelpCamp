@@ -8,6 +8,8 @@ var express     = require("express"),
 
 mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
 
+app.use(express.static(__dirname + "/public"));
+console.log(__dirname + '/public');
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
