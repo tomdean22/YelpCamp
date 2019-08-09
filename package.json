@@ -1,0 +1,20 @@
+{
+  "name": "yelpcampapp",
+  "version": "1.0.0",
+  "description": "Yelp Camp - Blog Application",
+  "main": "app.js",
+  "scripts": {
+    "test": "console.log(\"Yelp Camp - test\");"
+  },
+  "keywords": [
+    "yelp-camp"
+  ],
+  "author": "Thomas Dean",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.7"
+  }
+}
