@@ -37,15 +37,5 @@
     </div>
 </div>
 
-<p>
-    <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
-</p>
-
-<% campground.comments.forEach(function(comment) { %>
-    <p>
-        <strong><%= comment.author %></strong> - <%= comment.text %>
-    </p>
-<% }) %>
-
 <a href="/campgrounds" class="btn btn-primary btn-default">Back to Campgrounds</a>
 <% include ../partials/footer %>
