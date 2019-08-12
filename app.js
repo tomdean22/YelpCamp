@@ -1,11 +1,12 @@
-var express       = require("express"),
-    app           = express(),
-    bodyParser    = require("body-parser"),
-    mongoose      = require("mongoose"),
-    passport      = require("passport"),
-    LocalStrategy = require("passport-local"),
-    User          = require("./models/user"),
-    seedDB        = require("./seeds");
+var express        = require("express"),
+    app            = express(),
+    methodOverride = require("method-override"),
+    LocalStrategy  = require("passport-local"),
+    bodyParser     = require("body-parser"),
+    mongoose       = require("mongoose"),
+    passport       = require("passport"),
+    User           = require("./models/user"),
+    seedDB         = require("./seeds");
 
 // requiring routes
 var commentRoutes    = require("./routes/comments"),
@@ -14,8 +15,9 @@ var commentRoutes    = require("./routes/comments"),
 
 mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
 
-app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 
 // seedDB();
