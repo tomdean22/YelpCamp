@@ -4,6 +4,7 @@ var express = require("express"),
 var Campground = require("../models/campground"),
     middleware = require("../middleware"); // index.js is a special file name
 
+// SHOW CAMPGROUNDS
 router.get("/", function(req, res){
     // Get all campgrounds from DB
     Campground.find({}, function(err, allCampgrounds){
@@ -15,6 +16,7 @@ router.get("/", function(req, res){
     });
 });
 
+// CREATE CAMPGROUND
 router.post("/", middleware['isLoggedIn'], function(req, res) {
     // get data from form and add to campgrounds array
     // redirect back to campgrounds page
@@ -36,6 +38,7 @@ router.post("/", middleware['isLoggedIn'], function(req, res) {
     });
 });
 
+// NEW CAMPGROUND FORM
 router.get("/new", middleware['isLoggedIn'], function(req, res) {
     res.render("campgrounds/new");
 });
